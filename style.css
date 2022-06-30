@@ -57,7 +57,7 @@ main {
     background-color: var(--dark-desaturated-blue);
     color: var(--soft-red);
     font-weight: 700;
-    min-width: 100px;
+    width: 160px;
     min-height: 100px;
     border-radius: 10px;
     display: flex;
@@ -93,6 +93,10 @@ footer {
 
 .icon:hover path{
     fill: var(--soft-red);
+}
+
+.hills svg{
+    width: 100%;
 }
 
 .attribution {
