@@ -24,15 +24,16 @@ body {
 
 main {
     background-image: url(./images/bg-stars.svg);
-    height: 50vh;
+    height: 100%;
 }
 
 .container {
-    width: 50%;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
+    padding-top: 8rem;
 }
 
 .timer-title {
@@ -58,7 +59,7 @@ main {
     color: var(--soft-red);
     font-weight: 700;
     width: 160px;
-    min-height: 100px;
+    height: 133px;
     border-radius: 10px;
     display: flex;
     flex-flow: row nowrap;
@@ -79,11 +80,16 @@ main {
 
 /* FOOTER */
 footer {
-    margin-top: 2rem;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
 }
 
-.social-icons{
+.social-icons {
     text-align: center;
+    position: absolute;
+    width: 100%;
+    bottom: 35%;
 }
 
 .icon{
@@ -95,16 +101,21 @@ footer {
     fill: var(--soft-red);
 }
 
-.hills svg{
-    width: 100%;
-}
 
 .attribution {
     font-size: 11px;
     text-align: center;
     color: var(--soft-red);
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    
 }
 
 .attribution a {
     color: rgb(255 255 255 / 75%);
+}
+
+.attribution a:hover{
+    color: white;
 }
