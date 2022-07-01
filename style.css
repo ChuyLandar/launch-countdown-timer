@@ -13,6 +13,7 @@
     --dark-desaturated-blue: hsl(236, 21%, 26%);
     --very-dark-blue: hsl(235, 16%, 14%);
     --very-dark-mostly-black-blue: hsl(234, 17%, 12%);
+    --ruler-color: hsl(235deg 16% 14% / 36%);
 }
 
 body {
@@ -53,6 +54,19 @@ main {
     grid-template-rows: repeat(3, auto);
     grid-template-columns: repeat(4, auto);
     grid-gap: 0px 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.timer-ruler {
+    position: absolute;
+    z-index: 2;
+    color: white;
+    bottom: 136px;
+    height: 1px;
+    width: 100%;
+    background-color: var(--ruler-color);
+    border: 0px solid transparent;
 }
 
 .timer {
@@ -68,6 +82,23 @@ main {
     align-items: center;
     font-size: 4.8rem;
     padding: 1rem 1.8rem;
+    position: relative;
+}
+
+.timer::before {
+    content: ".";
+    color: var(--very-dark-blue);
+    position: absolute;
+    left: -10px;
+    bottom: 35px;
+}
+
+.timer::after {
+    content: ".";
+    color: var(--very-dark-blue);
+    position: absolute;
+    right: -9px;
+    bottom: 35px;
 }
 
 .timer-text {
@@ -81,13 +112,15 @@ main {
 
 /* FOOTER */
 footer {
-    height: 197px;
     width: 100%;
     position: absolute;
     bottom: 0;
-    background-image: url(./images/pattern-hills.svg);
-    background-repeat: no-repeat;
-    background-size: cover;
+}
+
+.hills-image {
+    width: 100%;
+    height: auto;
+    min-height: 197px;
 }
 
 .social-icons {
@@ -97,12 +130,12 @@ footer {
     bottom: 35%;
 }
 
-.icon{
+.icon {
     margin: 0 0.8rem;
     cursor: pointer;
 }
 
-.icon:hover path{
+.icon:hover path {
     fill: var(--soft-red);
 }
 
@@ -114,13 +147,13 @@ footer {
     width: 100%;
     position: absolute;
     bottom: 0;
-    
+
 }
 
 .attribution a {
     color: rgb(255 255 255 / 75%);
 }
 
-.attribution a:hover{
+.attribution a:hover {
     color: white;
 }
