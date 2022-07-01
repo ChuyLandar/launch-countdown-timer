@@ -2,28 +2,19 @@ const timerDays = document.querySelector(".timer-days");
 const timerHours = document.querySelector(".timer-hours");
 const timerMinutes = document.querySelector(".timer-minutes");
 const timerSeconds = document.querySelector(".timer-seconds");
+const allTimers = document.querySelectorAll(".timer");
 
-
-timerDays.addEventListener("animationend", () => {
-    timerDays.classList.remove("flip");
+allTimers.forEach(e => {
+    e.addEventListener("animationend", () => {
+        e.classList.remove("flip");
+    });
 });
-timerHours.addEventListener("animationend", () => {
-    timerHours.classList.remove("flip");
-});
-timerMinutes.addEventListener("animationend", () => {
-    timerMinutes.classList.remove("flip");
-});
-timerSeconds.addEventListener("animationend", () => {
-    timerSeconds.classList.remove("flip");
-});
-
 
 fourteenDays = 8.64e7 * 14;
 let today = new Date().getTime();
 const goalDate = today + fourteenDays;
 
-
-setInterval(() => {
+const timerID = setInterval(() => {
     let today = new Date().getTime();
     const releaseDate = goalDate - today;
 
@@ -50,4 +41,10 @@ setInterval(() => {
     timerMinutes.textContent = m;
     timerSeconds.textContent = s;
 
+    if(releaseDate <= 0){
+        clearInterval(timerID);
+        allTimers.forEach(e => {
+            e.textContent = "0";
+        });
+    }
 }, 1000);
