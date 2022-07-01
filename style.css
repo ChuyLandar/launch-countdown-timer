@@ -85,6 +85,10 @@ main {
     position: relative;
 }
 
+.flip {
+    animation: flip 500ms;
+}
+
 .timer::before {
     content: ".";
     color: var(--very-dark-blue);
@@ -147,7 +151,6 @@ footer {
     width: 100%;
     position: absolute;
     bottom: 0;
-
 }
 
 .attribution a {
@@ -157,3 +160,13 @@ footer {
 .attribution a:hover {
     color: white;
 }
+
+@keyframes flip{
+    from{
+      transform: rotateX(0)
+    }
+    
+    to{
+      transform: rotateX(360deg)
+    }
+  }
